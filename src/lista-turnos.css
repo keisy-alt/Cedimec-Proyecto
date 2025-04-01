@@ -1,0 +1,154 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1280px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #003366;
+}
+
+.back-button {
+  border-radius: 50%;
+  padding: 8px;
+  color: #22c55e;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Contenido principal */
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 16px;
+  gap: 16px;
+}
+
+/* Sección de Turno Actual */
+.turno-actual-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #003366;
+  text-align: center;
+}
+
+.turno-actual-display {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  padding: 32px;
+}
+
+.turno-actual-text {
+  font-size: 96px;
+  font-weight: bold;
+}
+
+.button-container {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.next-button {
+  padding: 8px 16px;
+  background-color: #1e40af;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.next-button:hover {
+  background-color: #1e3a8a;
+}
+
+/* Sección de Próximo Turno */
+.proximo-turno-container {
+  margin-top: 16px;
+}
+
+.proximo-title {
+  text-align: right;
+}
+
+.table-container {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.turnos-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.turnos-table th,
+.turnos-table td {
+  padding: 8px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.turnos-table th {
+  background-color: #f9fafb;
+}
+
+.highlighted-row {
+  background-color: #22c55e;
+  color: white;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+  }
+
+  .turno-actual-container {
+    width: 50%;
+  }
+
+  .proximo-turno-container {
+    width: 50%;
+    margin-top: 0;
+  }
+}

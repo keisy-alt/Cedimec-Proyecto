@@ -1,0 +1,434 @@
+#root {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #f0f2f5;
+}
+
+.tb_forms {
+  padding: 10px 20px;
+  margin: 1rem;
+  color: #003366;
+  font-weight: 200;
+  font-size: large;
+}
+
+.ddl {
+  padding: 10px 20px;
+  background-color: #003366;
+  color: white;
+  font-size: medium;
+}
+
+.ddl option {
+  padding: 10px 20px;
+  background-color: #ffff;
+  color: #003366;
+  font-size: medium;
+}
+
+.card {
+  padding: 2em;
+}
+
+.btts_pequeños {
+  margin: 1rem;
+  background-color: #003366;
+  color: white;
+  font-size: medium;
+  padding: 0.5rem 2rem;
+  width: 90%;
+}
+
+.btts_grandes {
+  padding: 2rem;
+  margin: 1rem;
+  background-color: #003366;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+}
+
+.ttls_grandes {
+  color: #003366;
+}
+
+.btts_grandes:hover {
+  background-color: #1d5996;
+}
+
+/* Estilos para CEDIMEC según la imagen */
+.cedimec-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  position: relative;
+}
+
+.login-link {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  text-align: right;
+}
+
+.iniciar-sesion-link {
+  background: none;
+  border: none;
+  color: #003366;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.iniciar-sesion-link:hover {
+  text-decoration: underline;
+}
+
+.cedimec-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 20px;
+}
+
+.cedimec-title {
+  color: #003366;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.cedimec-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.cedimec-button {
+  background-color: #003366;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  min-width: 150px;
+}
+
+.cedimec-button:hover {
+  background-color: #004080;
+}
+
+/* Estilos para el modal de inicio de sesión */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #003366;
+  color: white;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+/* Formulario del modal */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: left;
+  color: #003366;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.login-button,
+.cancel-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-button {
+  background-color: #003366;
+  color: white;
+}
+
+.login-button:hover {
+  background-color: #1d5996;
+}
+
+.cancel-button {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.cancel-button:hover {
+  background-color: #e5e7eb;
+}
+
+.error-message {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Añade estos estilos adicionales al App.css existente */
+
+/* Estilos para la pantalla de generar turno */
+.turno-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.turno-instruction {
+  color: #003366;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.cedula-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-instruction {
+  color: #003366;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cedula-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #003366;
+  text-align: center;
+}
+
+.error-text {
+  color: red;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.button-container {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.confirm-button {
+  background-color: #003366;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  min-width: 150px;
+}
+
+.confirm-button:hover {
+  background-color: #004080;
+}
+
+/* Estilos para la pantalla de categoría de turno */
+.categoria-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.categoria-instruction {
+  color: #003366;
+  font-size: 18px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.categoria-highlight {
+  font-weight: bold;
+  color: #003366;
+}
+
+.select-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.categoria-select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #003366;
+  color: white;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.categoria-select option {
+  background-color: white;
+  color: #003366;
+  padding: 12px;
+}
+
+.categoria-select option:disabled {
+  color: #999;
+}
+
+/* Estilos para la pantalla de confirmación de turno */
+.turno-confirmacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.confirmacion-titulo {
+  color: #003366;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.confirmacion-subtitulo {
+  color: #003366;
+  font-size: 18px;
+  margin: 0;
+}
+
+.turno-numero {
+  color: #003366;
+  font-weight: bold;
+  font-size: 100px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.primeraFila {
+  background-color: #04628e;
+  color: white;
+  font-weight: 500;
+}
+.prioritariaFila {
+  background-color: #0490d1;
+  color: white;
+  font-weight: 500;
+}
+
+.tablaCategorias {
+  text-align: center;
+  margin: auto;
+}
+.tablaCategorias tr td {
+  width: 175px;
+}
+.tablaCategorias button {
+  border: none;
+}
