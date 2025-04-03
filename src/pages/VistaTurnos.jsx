@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import "../lista-turnos.css";
 import { useContext } from "react";
-
+import { useNavigate } from "react-router-dom";
 import { TurnosContext } from "../context/TurnosContext";
 export default function VistaTurnos() {
   const { turnos } = useContext(TurnosContext);
   const [turnoActual, setTurnoActual] = useState("XXX-000");
   const [proximosTurnos, setProximosTurnos] = useState([]);
+  const navigate = useNavigate(); // Hook para navegar
   useEffect(() => {
     setProximosTurnos(turnos);
   }, [turnos]);
@@ -27,7 +28,9 @@ export default function VistaTurnos() {
       {/* Header */}
       <header className="header">
         <h1 className="title">Lista de Turnos</h1>
-        <button className="back-button">
+        <button onClick={()=>{
+          navigate("/")
+        }} className="back-button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
