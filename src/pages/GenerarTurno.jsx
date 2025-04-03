@@ -72,6 +72,7 @@ export const GenerarTurno = () => {
                 onClick={() => {
                   if (cedula && cedula.length > 0 && cedula.length < 11) {
                     setValid(true);
+                    setCedula("");
                   } else {
                     setValid(false);
                   }

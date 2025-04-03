@@ -75,12 +75,7 @@ export function TurnosProvider({ children }) {
     return () => unsubscribe();
   }, []);
 
-  useEffect(() => {
-    var promedio = calcularPromedioSalida(historialTurnos);
-    var contTurnos = contarTurnosHoy(historialTurnos);
-    setPromedioTIempo(promedio);
-    setTurnosxDias(contTurnos);
-  }, [historialTurnos]);
+  
 
   useEffect(() => {
     const q = query(
@@ -119,6 +114,13 @@ export function TurnosProvider({ children }) {
     });
     return () => unsubscribe();
   }, []);
+
+  useEffect(() => {
+    var promedio = calcularPromedioSalida(historialTurnos);
+    var contTurnos = contarTurnosHoy(historialTurnos);
+    setPromedioTIempo(promedio);
+    setTurnosxDias(contTurnos);
+  }, [historialTurnos]);
 
   const agregarCategoria = async (categoria, nombre, valor) => {
     await addDoc(categoriaCollection, {
