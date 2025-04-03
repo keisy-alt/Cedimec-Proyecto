@@ -75,7 +75,7 @@ export default function VistaTurnos() {
                       <tr
                         key={index}
                         className={
-                          turno.atendiendo == true ? "highlighted-row" : ""
+                          turno.categoria == "Prioritario" ? "highlighted-row" : ""
                         }
                       >
                         <td>
@@ -95,7 +95,7 @@ export default function VistaTurnos() {
                       <tr
                         key={index}
                         className={
-                          turno.atendiendo == true ? "highlighted-row" : ""
+                          turno.categoria == "Prioritaria" ? "highlighted-row" : ""
                         }
                       >
                         <td>
