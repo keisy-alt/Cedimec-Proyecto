@@ -60,7 +60,7 @@ export const GenerarTurno = () => {
                 }}
                 maxLength={10}
               />
-              {cedula.length > 0 && cedula.length < 9 && (
+              {cedula.length > 0 && cedula.length < 10 && (
                 <p className="error-text">
                   La cédula debe tener al menos 9 dígitos
                 </p>
@@ -70,7 +70,7 @@ export const GenerarTurno = () => {
               <button
                 className="confirm-button"
                 onClick={() => {
-                  if (cedula && cedula.length > 0 && cedula.length < 9) {
+                  if (cedula && cedula.length > 0 && cedula.length < 11) {
                     setValid(true);
                   } else {
                     setValid(false);
