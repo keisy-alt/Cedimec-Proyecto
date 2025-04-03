@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import "../App.css";
 import { useContext } from "react";
 
+import { useNavigate } from "react-router-dom";
 import { TurnosContext } from "../context/TurnosContext";
 const TurnosPage = () => {
-  const { turnos, editarTurno, prepararSiguiente } = useContext(TurnosContext);
+  const navigate = useNavigate(); // Hook para navegar
+  const { turnos, editarTurno, prepararSiguiente, userLog } =
+    useContext(TurnosContext);
 
-  const handleConfirm = (index) => {
-    setTurnos((prev) => {
-      const newTurnos = [...prev];
-      newTurnos[index].confirmada = !newTurnos[index].confirmada;
-      return newTurnos;
-    });
-  };
+  useEffect(() => {
+    console.log(userLog);
+    if (userLog != "recep") navigate("/");
+  }, []);
 
   return (
     <div className="cedimec-container">

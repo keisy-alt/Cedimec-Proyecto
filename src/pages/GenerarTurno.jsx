@@ -51,19 +51,26 @@ export const GenerarTurno = () => {
                 className="cedula-input"
                 type="text"
                 placeholder="Ingrese su Documento"
+                value={cedula}
                 onChange={(e) => {
-                  setCedula(e.target.value);
+                  const value = e.target.value;
+                  if (/^\d{0,10}$/.test(value)) {
+                    setCedula(value);
+                  }
                 }}
+                maxLength={10}
               />
-              {valid != null && (
-                <p className="error-text">Ingresar cédula para continuar</p>
+              {cedula.length > 0 && cedula.length < 9 && (
+                <p className="error-text">
+                  La cédula debe tener al menos 9 dígitos
+                </p>
               )}
             </div>
             <div className="button-container">
               <button
                 className="confirm-button"
                 onClick={() => {
-                  if (cedula) {
+                  if (cedula && cedula.length > 0 && cedula.length < 9) {
                     setValid(true);
                   } else {
                     setValid(false);

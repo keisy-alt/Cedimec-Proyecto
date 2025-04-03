@@ -62,7 +62,7 @@ export default function VistaTurnos() {
               <thead>
                 <tr>
                   <th>Categoría</th>
-                  <th>Nombre/Cedula</th>
+                  <th>Cedula</th>
                 </tr>
               </thead>
               <tbody>

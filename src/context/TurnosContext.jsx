@@ -26,7 +26,7 @@ export function TurnosProvider({ children }) {
   const [cita, setCita] = useState("");
   const [historialTurnos, sethistorialTurnos] = useState([]);
   const [categoriasMenu, setCategoriasMenu] = useState([]);
-
+  const [userLog, setUserLog] = useState("");
   const [promedioTIempo, setPromedioTIempo] = useState(0);
   const [turnosxDias, setTurnosxDias] = useState();
 
@@ -195,6 +195,8 @@ export function TurnosProvider({ children }) {
         eliminarCategorias,
         promedioTIempo,
         turnosxDias,
+        userLog,
+        setUserLog,
       }}
     >
       {children}

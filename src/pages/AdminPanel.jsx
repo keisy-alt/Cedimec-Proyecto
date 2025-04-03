@@ -3,7 +3,10 @@ import { useContext } from "react";
 import { TurnosContext } from "../context/TurnosContext";
 import "../App.css";
 
+import { useNavigate } from "react-router-dom";
+
 const AdminPanel = () => {
+  const navigate = useNavigate(); // Hook para navegar
   const {
     categoriasMenu,
     agregarCategoria,
@@ -11,14 +14,21 @@ const AdminPanel = () => {
     eliminarCategorias,
     promedioTIempo,
     turnosxDias,
+    userLog,
   } = useContext(TurnosContext);
   const [showModal, setShowModal] = useState(false);
+  const [showModalDe, setShowModalDe] = useState(false);
   const [nombre, setNombre] = useState("");
   const [codigo, setCodigo] = useState("");
   const [error, setError] = useState("");
   const [id, setId] = useState();
   const [categoria, setCategoria] = useState("");
   const [opcion, setOpcion] = useState(0);
+
+  useEffect(() => {
+    console.log(userLog);
+    if (userLog != "admin") navigate("/");
+  }, []);
 
   return (
     <div className="cedimec-container">
@@ -58,7 +68,10 @@ const AdminPanel = () => {
                         <button
                           className="delete-button"
                           onClick={() => {
-                            eliminarCategorias(cat.id);
+                            setId(cat.id);
+                            setShowModalDe(true);
+
+                            setNombre(cat.nombre);
                           }}
                         >
                           ❌
@@ -119,7 +132,10 @@ const AdminPanel = () => {
                         <button
                           className="delete-button"
                           onClick={() => {
-                            eliminarCategorias(cat.id);
+                            setId(cat.id);
+
+                            setNombre(cat.nombre);
+                            setShowModalDe(true);
                           }}
                         >
                           ❌
@@ -229,6 +245,46 @@ const AdminPanel = () => {
                     type="button"
                     className="cancel-button"
                     onClick={() => setShowModal(false)}
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showModalDe && (
+        <div className="modal-overlay">
+          <div className="modal-container">
+            <div className="modal-header">
+              <h2>Eliminar Categoria</h2>
+              <button
+                className="close-button"
+                onClick={() => setShowModalDe(false)}
+              >
+                &times;
+              </button>
+            </div>
+            <div className="modal-body">
+              <div>
+                <p>¿Esta seguro de eliminar la categoria {nombre} ?</p>
+                <div className="form-actions">
+                  <button
+                    onClick={() => {
+                      eliminarCategorias(id);
+                      setShowModalDe(false);
+                    }}
+                    style={{ backgroundColor: "Red" }}
+                    className="login-button"
+                  >
+                    Eliminar
+                  </button>
+                  <button
+                    type="button"
+                    className="cancel-button"
+                    onClick={() => setShowModalDe(false)}
                   >
                     Cancelar
                   </button>

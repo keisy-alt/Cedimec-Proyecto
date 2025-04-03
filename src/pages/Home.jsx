@@ -2,13 +2,17 @@ import React from "react";
 import "../App.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { TurnosContext } from "../context/TurnosContext";
 export const Home = () => {
+  const { setUserLog } = useContext(TurnosContext);
   const navigate = useNavigate(); // Hook para navegar
   const [showModal, setShowModal] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const handleLogin = () => {
+    setUserLog(username);
     // Aquí puedes implementar la lógica de autenticación
     if (username === "admin" && password === "admin123") {
       navigate("/AdminPanel");
@@ -70,7 +74,7 @@ export const Home = () => {
               </button>
             </div>
             <div className="modal-body">
-              <form onSubmit={handleLogin}>
+              <div>
                 {error && <div className="error-message">{error}</div>}
                 <div className="form-group">
                   <label htmlFor="username">Usuario:</label>
@@ -93,7 +97,10 @@ export const Home = () => {
                   />
                 </div>
                 <div className="form-actions">
-                  <button type="submit" className="login-button">
+                  <button
+                    onClick={() => handleLogin()}
+                    className="login-button"
+                  >
                     Ingresar
                   </button>
                   <button
@@ -104,7 +111,7 @@ export const Home = () => {
                     Cancelar
                   </button>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
