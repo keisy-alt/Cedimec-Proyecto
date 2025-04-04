@@ -135,13 +135,7 @@ export function TurnosProvider({ children }) {
   };
 
   const agregarTurno = async (estadoAtendido = false) => {
-    var numero = 0;
-    if (!cedula || !categoria || !cita) return;
-    numero = 0;
-    if (ultimoTurno) {
-      numero = ultimoTurno.numero + 1;
-    }
-    var atendiendo = false;
+    var numero = 0; 
     console.log({
       cedula,
       categoria,
@@ -152,6 +146,13 @@ export function TurnosProvider({ children }) {
       cita,
       horaSalida: null,
     })
+    if (!cedula || !categoria || !cita) return;
+    numero = 0;
+    if (ultimoTurno) {
+      numero = ultimoTurno.numero + 1;
+    }
+    var atendiendo = false;
+   
     await addDoc(turnosCollection, {
       cedula,
       categoria,
