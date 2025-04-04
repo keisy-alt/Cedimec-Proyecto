@@ -142,6 +142,16 @@ export function TurnosProvider({ children }) {
       numero = ultimoTurno.numero + 1;
     }
     var atendiendo = false;
+    console.log({
+      cedula,
+      categoria,
+      numero,
+      hora: serverTimestamp(),
+      atendiendo,
+      estadoAtendido,
+      cita,
+      horaSalida: null,
+    })
     await addDoc(turnosCollection, {
       cedula,
       categoria,
