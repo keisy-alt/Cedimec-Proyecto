@@ -70,7 +70,7 @@ export const GenerarTurno = () => {
               <button
                 className="confirm-button"
                 onClick={() => {
-                  if (cedula && cedula.length > 0 && cedula.length < 11) {
+                  if (cedula.length > 9 && cedula.length < 11) {
                     setValid(true);
                   } else {
                     setValid(false);
