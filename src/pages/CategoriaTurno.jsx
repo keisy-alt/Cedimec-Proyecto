@@ -64,7 +64,7 @@ export default function CategoriaTurno() {
               onClick={() => {
                 if (cita) {
                   agregarTurno();
-                  navigate("/tuTurno");
+                 // navigate("/tuTurno");
                 }
               }}
             >
