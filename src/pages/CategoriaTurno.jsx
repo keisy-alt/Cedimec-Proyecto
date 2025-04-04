@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function CategoriaTurno() {
   const navigate = useNavigate();
-  const { agregarTurno, categoria, setCita, cita, categoriasMenu } =
+  const { agregarTurno, categoria, setCita, cita, categoriasMenu,setCedula } =
     useContext(TurnosContext);
   const [opciones, setOpciones] = useState([]);
 
